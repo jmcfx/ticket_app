@@ -5,6 +5,7 @@ import 'package:ticket_app/utils/media/media.dart';
 
 import 'package:ticket_app/utils/styles/app_styles.dart';
 import 'package:ticket_app/views/widgets/app_double_text.dart';
+import 'package:ticket_app/views/widgets/ticket_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,11 +14,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.backgroundColor,
+      appBar: AppBar(
+        backgroundColor: AppStyles.backgroundColor ,
+      ),
       body: ListView(
         children: [
-          SizedBox(
-            height: 40.h,
-          ),
+          // SizedBox(
+          //   height: 40.h,
+          // ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20.h),
             child: Column(
@@ -58,9 +62,10 @@ class HomeScreen extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10).r,
-                      color: const Color(0xFFF4F6FD)),
-                  child: const Row(
+                    borderRadius: BorderRadius.circular(10).r,
+                    color: const Color(0xFFF4F6FD),
+                  ),
+                  child: const Row( 
                     children: [
                       Icon(
                         FluentSystemIcons.ic_fluent_search_regular,
@@ -76,7 +81,11 @@ class HomeScreen extends StatelessWidget {
                 const AppDoubleText(
                   bigText: 'Upcoming Flights',
                   smallText: 'View all',
-                )
+                ),
+                 SizedBox(
+                  height: 20.h,
+                ),
+               const TickView(),
               ],
             ),
           ),
