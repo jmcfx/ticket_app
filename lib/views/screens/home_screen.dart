@@ -1,8 +1,8 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ticket_app/models/app_info_list.dart';
 import 'package:ticket_app/utils/media/media.dart';
-
 import 'package:ticket_app/utils/styles/app_styles.dart';
 import 'package:ticket_app/views/widgets/app_double_text.dart';
 import 'package:ticket_app/views/widgets/ticket_view.dart';
@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppStyles.backgroundColor,
       appBar: AppBar(
-        backgroundColor: AppStyles.backgroundColor ,
+        backgroundColor: AppStyles.backgroundColor,
       ),
       body: ListView(
         children: [
@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10).r,
                     color: const Color(0xFFF4F6FD),
                   ),
-                  child: const Row( 
+                  child: const Row(
                     children: [
                       Icon(
                         FluentSystemIcons.ic_fluent_search_regular,
@@ -82,10 +82,19 @@ class HomeScreen extends StatelessWidget {
                   bigText: 'Upcoming Flights',
                   smallText: 'View all',
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 20.h,
                 ),
-               const TickView(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.only(left: 20).r,
+                  child: Row(
+                      children: ticketList
+                          .map((value) => TicketView(
+                                ticket: value,
+                              ))
+                          .toList()),
+                ),
               ],
             ),
           ),
