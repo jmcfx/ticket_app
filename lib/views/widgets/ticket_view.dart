@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ticket_app/utils/styles/app_styles.dart';
 import 'package:ticket_app/views/widgets/app_column_text_layout.dart';
@@ -9,18 +8,19 @@ import 'package:ticket_app/views/widgets/big_dot.dart';
 import 'package:ticket_app/views/widgets/custom_text_style.dart';
 
 class TicketView extends StatelessWidget {
-  const  TicketView({super.key, required this.ticket});
+  const TicketView({super.key, required this.ticket , this.wholeScreen = false});
 
   final Map<String, dynamic> ticket;
+  final bool wholeScreen;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SizedBox(
-      width: size.width * 0.85,
+      width: size.width * 0.85.w,
       height: 189.h,
       child: Container(
-        margin: EdgeInsets.only(right: 16.w),
+        margin: EdgeInsets.only(right: wholeScreen == true ? 0 :  16.w),
         child: Column(
           children: [
             //blue container
@@ -111,18 +111,18 @@ class TicketView extends StatelessWidget {
             // circle and dots ...
             Container(
               color: AppStyles.ticketOrange,
-              child: const Row(
+              child: Row(
                 children: [
-                  BigCircle(
+                  const BigCircle(
                     isRight: false,
                   ),
                   Expanded(
                     child: AppLayoutBuilderWidget(
                       randomDivider: 16,
-                      width: 6,
+                      width: 6.w,
                     ),
                   ),
-                  BigCircle(
+                  const BigCircle(
                     isRight: true,
                   )
                 ],
@@ -138,7 +138,7 @@ class TicketView extends StatelessWidget {
                   bottomRight: Radius.circular(21.r),
                 ),
               ),
-              child:  Column(
+              child: Column(
                 children: [
                   //show departure and destination with icons first line ...
                   Row(
@@ -155,7 +155,7 @@ class TicketView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                       ),
                       AppColumnTextLayout(
-                        topText:  ticket['number'].toString(),
+                        topText: ticket['number'].toString(),
                         bottomText: 'Number',
                         crossAxisAlignment: CrossAxisAlignment.end,
                       ),

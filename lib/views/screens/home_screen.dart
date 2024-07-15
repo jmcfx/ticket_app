@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           //   height: 40.h,
           // ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Column(
               children: [
                 Row(
@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Container(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
+                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10).r,
                     color: const Color(0xFFF4F6FD),
@@ -87,13 +87,14 @@ class HomeScreen extends StatelessWidget {
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(left: 20).r,
+                  padding: EdgeInsets.only(left: 20.w),
                   child: Row(
-                      children: ticketList
-                          .map((value) => TicketView(
-                                ticket: value,
-                              ))
-                          .toList()),
+                    children: ticketList.take(2)
+                        .map((value) => TicketView(
+                              ticket: value,
+                            ))
+                        .toList(),
+                  ),
                 ),
               ],
             ),
