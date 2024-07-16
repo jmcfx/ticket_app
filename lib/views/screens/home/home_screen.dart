@@ -1,9 +1,12 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ticket_app/models/all_json.dart';
 import 'package:ticket_app/models/app_info_list.dart';
 import 'package:ticket_app/utils/media/media.dart';
+import 'package:ticket_app/utils/routes/app_routes.dart';
 import 'package:ticket_app/utils/styles/app_styles.dart';
+import 'package:ticket_app/views/screens/home/widgets/hotel.dart';
 import 'package:ticket_app/views/widgets/app_double_text.dart';
 import 'package:ticket_app/views/widgets/ticket_view.dart';
 
@@ -14,9 +17,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: AppStyles.backgroundColor,
-      ),
+     appBar: AppBar(),
       body: ListView(
         children: [
           // SizedBox(
@@ -25,6 +26,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,10 +80,12 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 40.h,
                 ),
-                const AppDoubleText(
-                  bigText: 'Upcoming Flights',
-                  smallText: 'View all',
-                ),
+                //UpComing Flights.....
+                AppDoubleText(
+                    bigText: 'Upcoming Flights',
+                    smallText: 'View all',
+                    func: () =>
+                        Navigator.pushNamed(context, AppRoutes.allTicketRoute)),
                 SizedBox(
                   height: 20.h,
                 ),
@@ -89,10 +93,30 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.only(left: 20.w),
                   child: Row(
-                    children: ticketList.take(2)
+                    children: ticketList
+                        .take(2)
                         .map((value) => TicketView(
                               ticket: value,
                             ))
+                        .toList(),
+                  ),
+                ),
+                SizedBox(
+                  height: 40.h,
+                ),
+                //hotel.....
+                AppDoubleText(
+                  bigText: 'Hotels',
+                  smallText: 'View all',
+                  func: () {},
+                ),
+                SizedBox(height: 20.h),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList
+                        .take(2)
+                        .map((value) => Hotels(hotel: value))
                         .toList(),
                   ),
                 ),
@@ -104,3 +128,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
