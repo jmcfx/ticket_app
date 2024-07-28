@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ticket_app/utils/routes/app_routes.dart';
 import 'package:ticket_app/utils/styles/app_styles.dart';
-import 'package:ticket_app/views/screens/ticket/all_ticket_screen.dart';
+import 'package:ticket_app/views/screens/home/all_ticket_screen.dart';
 import 'package:ticket_app/views/widgets/bottom_nav_bar.dart';
 
 void main() {

@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ticket_app/utils/routes/app_routes.dart';
 import 'package:ticket_app/utils/styles/app_styles.dart';
 import 'package:ticket_app/views/screens/search/widgets/app_text_icon.dart';
 import 'package:ticket_app/views/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:ticket_app/views/screens/search/widgets/find_tickets.dart';
+import 'package:ticket_app/views/screens/search/widgets/ticket_promotion.dart';
 import 'package:ticket_app/views/widgets/app_double_text.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -16,14 +19,17 @@ class SearchScreen extends StatelessWidget {
       backgroundColor: AppStyles.backgroundColor,
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20).r,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
           children: [
             Text(
               "What are\nyou looking for?",
               style: AppStyles.headLineStyle1.copyWith(fontSize: 35.sp),
             ),
             SizedBox(height: 20.h),
-            const AppTicketTabs(),
+            const AppTicketTabs(
+              firstTab: "All tickets",
+              secondTab: "Hotels",
+            ),
             SizedBox(height: 25.h),
             const AppTextIcon(
               icons: Icons.flight_takeoff_rounded,
@@ -34,7 +40,7 @@ class SearchScreen extends StatelessWidget {
               icons: Icons.flight_land_rounded,
               text: 'Arrival',
             ),
-             SizedBox(height: 25.h),
+            SizedBox(height: 25.h),
             const FindTickets(),
             SizedBox(
               height: 40.h,
@@ -46,7 +52,10 @@ class SearchScreen extends StatelessWidget {
                 context,
                 AppRoutes.allTicketRoute,
               ),
-            )
+            ),
+            SizedBox(height: 15.h),
+            //promotion....
+            const TicketPromotion()
           ],
         ),
       ),
