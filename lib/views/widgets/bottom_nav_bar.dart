@@ -21,9 +21,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   ];
 
   //change the index for bottomNavbar to newIndex...
-  void _onItemTapped(int index) {
+  void _onItemTapped(int newIndex) {
     setState(() {
-      _selectedIndex = index;
+      _selectedIndex = newIndex;
     });
   }
 

@@ -8,26 +8,33 @@ import 'package:ticket_app/views/widgets/big_dot.dart';
 import 'package:ticket_app/views/widgets/custom_text_style.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key, required this.ticket , this.wholeScreen = false});
+  const TicketView(
+      {super.key,
+      required this.ticket,
+      this.wholeScreen = false,
+      this.isColor});
 
   final Map<String, dynamic> ticket;
   final bool wholeScreen;
+  final bool? isColor;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       width: size.width * 0.85.w,
-      height: 189.h,
+      height: 180.h,
       child: Container(
-        margin: EdgeInsets.only(right: wholeScreen == true ? 0 :  16.w),
+        margin: EdgeInsets.only(right: wholeScreen == true ? 0 : 16.w),
         child: Column(
           children: [
             //blue container
             Container(
               padding: const EdgeInsets.all(16).r,
               decoration: BoxDecoration(
-                color: AppStyles.ticketBlue,
+                color: isColor == null
+                    ? AppStyles.ticketBlue
+                    : AppStyles.ticketColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(21.r),
                   topRight: Radius.circular(21.r),
@@ -35,41 +42,54 @@ class TicketView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  //show departure and destination with icons first line ...
+                  //ticketView first row....
                   Row(
                     children: [
                       CustomTextStyle(
                         text: ticket['from']['code'],
-                        textStyle: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
+                        textAlign: TextAlign.start,
+                        textStyle: isColor == null
+                            ? AppStyles.headLineStyle3
+                                .copyWith(color: Colors.white)
+                            : AppStyles.headLineStyle3,
                       ),
                       const Spacer(),
-                      const BigDot(),
+                      BigDot(
+                        isColor: isColor,
+                      ),
                       Expanded(
                         child: Stack(
                           children: [
                             SizedBox(
                               height: 24.h,
-                              child: const AppLayoutBuilderWidget(
-                                  randomDivider: 6),
+                              child:  const AppLayoutBuilderWidget(
+                                  randomDivider: 6,
+                                  ),
                             ),
                             Center(
                               child: Transform.rotate(
                                 angle: 1.57,
-                                child: const Icon(
+                                child: Icon(
                                   Icons.local_airport_rounded,
-                                  color: Colors.white,
+                                  color: isColor == null
+                                      ? Colors.white
+                                      : AppStyles.planeSecondColor,
                                 ),
                               ),
                             )
                           ],
                         ),
                       ),
-                      const BigDot(),
+                      BigDot(
+                        isColor: isColor,
+                      ),
                       const Spacer(),
                       CustomTextStyle(
-                        textStyle: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
+                        textAlign: TextAlign.end,
+                        textStyle: isColor == null
+                            ? AppStyles.headLineStyle3
+                                .copyWith(color: Colors.white)
+                            : AppStyles.headLineStyle3,
                         text: ticket['to']['code'],
                       ),
                     ],
@@ -77,21 +97,24 @@ class TicketView extends StatelessWidget {
                   SizedBox(
                     height: 3.h,
                   ),
+                  //ticket secondView row.....
                   Row(
                     children: [
                       SizedBox(
                         width: 100.w,
                         child: CustomTextStyle(
+                          textAlign: TextAlign.start,
                           text: ticket['from']['name'],
-                          textStyle: AppStyles.headLineStyle4
-                              .copyWith(color: Colors.white),
+                          textStyle: isColor ==null ? AppStyles.headLineStyle4
+                              .copyWith(color: Colors.white) : AppStyles.headLineStyle4 ,
                         ),
                       ),
                       const Spacer(),
                       CustomTextStyle(
+                        textAlign: TextAlign.center,
                         text: ticket['flying_time'],
-                        textStyle: AppStyles.headLineStyle4
-                            .copyWith(color: Colors.white),
+                        textStyle: isColor ==null ? AppStyles.headLineStyle4
+                            .copyWith(color: Colors.white) : AppStyles.headLineStyle4,
                       ),
                       const Spacer(),
                       SizedBox(
@@ -99,8 +122,8 @@ class TicketView extends StatelessWidget {
                         child: CustomTextStyle(
                           textAlign: TextAlign.end,
                           text: ticket['to']['name'],
-                          textStyle: AppStyles.headLineStyle4
-                              .copyWith(color: Colors.white),
+                          textStyle: isColor ==null ? AppStyles.headLineStyle4
+                              .copyWith(color: Colors.white) : AppStyles.headLineStyle4,
                         ),
                       ),
                     ],
@@ -110,20 +133,23 @@ class TicketView extends StatelessWidget {
             ),
             // circle and dots ...
             Container(
-              color: AppStyles.ticketOrange,
+              color: isColor== null ? AppStyles.ticketOrange :AppStyles.ticketColor ,
               child: Row(
                 children: [
-                  const BigCircle(
+                   BigCircle(
                     isRight: false,
+                    isColor: isColor,
                   ),
                   Expanded(
                     child: AppLayoutBuilderWidget(
                       randomDivider: 16,
                       width: 6.w,
+                      isColor: isColor,
                     ),
                   ),
-                  const BigCircle(
+                   BigCircle(
                     isRight: true,
+                    isColor: isColor,
                   )
                 ],
               ),
@@ -132,10 +158,10 @@ class TicketView extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(16).r,
               decoration: BoxDecoration(
-                color: AppStyles.ticketOrange,
+                color: isColor ==null ? AppStyles.ticketOrange : AppStyles.ticketColor ,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(21.r),
-                  bottomRight: Radius.circular(21.r),
+                  bottomLeft: Radius.circular( isColor == null ? 21.r : 0),
+                  bottomRight: Radius.circular( isColor == null? 21.r : 0),
                 ),
               ),
               child: Column(
@@ -147,17 +173,20 @@ class TicketView extends StatelessWidget {
                       AppColumnTextLayout(
                         topText: ticket['date'],
                         bottomText: 'DATE',
+                        isColor: isColor,
                         crossAxisAlignment: CrossAxisAlignment.start,
                       ),
                       AppColumnTextLayout(
                         topText: ticket['departure_time'],
                         bottomText: 'Departure time',
                         crossAxisAlignment: CrossAxisAlignment.center,
+                        isColor: isColor,
                       ),
                       AppColumnTextLayout(
                         topText: ticket['number'].toString(),
                         bottomText: 'Number',
                         crossAxisAlignment: CrossAxisAlignment.end,
+                        isColor: isColor,
                       ),
                     ],
                   ),
