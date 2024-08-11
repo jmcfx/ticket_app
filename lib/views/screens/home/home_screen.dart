@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.backgroundColor,
-     appBar: AppBar(),
+      appBar: AppBar(),
       body: ListView(
         children: [
           // SizedBox(
@@ -95,8 +95,16 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     children: ticketList
                         .take(2)
-                        .map((value) => TicketView(
-                              ticket: value,
+                        .map((value) => GestureDetector(
+                              onTap: () {
+                                var index = ticketList.indexOf(value);
+                                Navigator.pushNamed(
+                                    context, AppRoutes.ticketScreenRoute,
+                                    arguments: { "index" : index} );
+                              },
+                              child: TicketView(
+                                ticket: value,
+                              ),
                             ))
                         .toList(),
                   ),
@@ -108,7 +116,9 @@ class HomeScreen extends StatelessWidget {
                 AppDoubleText(
                   bigText: 'Hotels',
                   smallText: 'View all',
-                  func: () {},
+                  func: () {
+                    Navigator.pushNamed(context, AppRoutes.allHotelScreenRoute);
+                  },
                 ),
                 SizedBox(height: 20.h),
                 SingleChildScrollView(
@@ -116,7 +126,9 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     children: hotelList
                         .take(2)
-                        .map((value) => Hotels(hotel: value))
+                        .map(
+                          (value) => Hotels(hotel: value),
+                        )
                         .toList(),
                   ),
                 ),
@@ -128,4 +140,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

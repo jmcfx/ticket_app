@@ -1,25 +1,37 @@
 List<Map<String, dynamic>> hotelList = [
   {
-    'image' : 'hotel_room.png' ,
+    'image': 'hotel_room.png',
     'destination': 'London',
-   'place' : 'Open Space' ,
-    'price' : 25 
+    'place': 'Open Space',
+    'price': 25,
+    'detail':
+        "Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions",
+    "images": [
+      "hotel_room_view_1.png",
+      "hotel_room_view_2.png",
+      "hotel_room_view_3.png",
+    ]
   },
-  
   {
-    'image' : 'city_view.png' ,
-    'destination' : 'London',
-   'place' : 'Global Will' , 
-    'price' : 40
-     },
-
+    'image': 'city_view.png',
+    'destination': 'London',
+    'place': 'Global Will',
+    'price': 40,
+    "detail":
+        "Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions",
+    "images": ["city_view_1.png", "city_view_2.png", "city_view_3.png",]
+  },
   {
-   'image' : 'pool_view.png' ,
-   'destination': 'Dubai',
-   'place' : 'Best pool' ,
-    'price' : 68
-
-     },
-
+    'image': 'pool_view.png',
+    'destination': 'Dubai',
+    'place': 'Best pool',
+    'price': 68,
+    'detail':
+        "Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions.Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions,Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience.  The hotel is situated just a short walk from major attractions. Nestled in the heart of the city, The Grand Arcadia Hotel is a luxurious 5-star establishment that offers unparalleled comfort and convenience. The hotel is situated just a short walk from major attractions",
+    "images": [
+      "pool_view_1.png",
+      "pool_view_2.png",
+      "pool_view_3.png",
+    ]
+  },
 ];
- 

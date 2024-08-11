@@ -16,7 +16,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List appScreens = [
     const HomeScreen(),
     const SearchScreen(),
-    const TicketScreen(),
+    const TicketScreen( ),
     const Text('Profile'),
   ];
 
