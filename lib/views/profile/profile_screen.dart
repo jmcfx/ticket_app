@@ -105,7 +105,7 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 10.h,
+              height: 6.h,
             ),
             //divider...
             Divider(
@@ -235,8 +235,11 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Divider(
+                    color: Colors.grey.shade300,
+                  ),
                   SizedBox(
-                    height: 25.h,
+                    height: 20.h,
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -255,8 +258,11 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Divider(
+                    color: Colors.grey.shade300,
+                  ),
                   SizedBox(
-                    height: 25.h,
+                    height: 20.h,
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -275,13 +281,16 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Divider(
+                    color: Colors.grey.shade300,
+                  ),
                   SizedBox(
-                    height: 30.h,
+                    height: 20.h,
                   ),
                   //Text.......
                   CustomTextStyle(
                     text: "How to get more miles",
-                    textStyle: AppStyles.headLineStyle3.copyWith(color: Colors.blue),
+                    textStyle: AppStyles.headLineStyle3.copyWith(color: AppStyles.primaryColor),
                   )
                 ],
               ),

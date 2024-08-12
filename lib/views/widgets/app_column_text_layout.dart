@@ -14,7 +14,7 @@ class AppColumnTextLayout extends StatelessWidget {
   final String topText, bottomText;
   final CrossAxisAlignment crossAxisAlignment;
   final bool? isColor;
-  
+
   @override
   Widget build(BuildContext context) {
     return Column(
