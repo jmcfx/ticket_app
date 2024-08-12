@@ -8,6 +8,7 @@ import 'package:ticket_app/utils/routes/app_routes.dart';
 import 'package:ticket_app/utils/styles/app_styles.dart';
 import 'package:ticket_app/views/screens/home/widgets/hotel.dart';
 import 'package:ticket_app/views/widgets/app_double_text.dart';
+import 'package:ticket_app/views/widgets/custom_text_style.dart';
 import 'package:ticket_app/views/widgets/ticket_view.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,7 +42,10 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           height: 5.h,
                         ),
-                        Text('Book Tickets', style: AppStyles.headLineStyle1),
+                         CustomTextStyle(
+                          text: "Book Tickets",
+                          textStyle: AppStyles.headLineStyle1,
+                        ),
                       ],
                     ),
                     Container(
@@ -100,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                                 var index = ticketList.indexOf(value);
                                 Navigator.pushNamed(
                                     context, AppRoutes.ticketScreenRoute,
-                                    arguments: { "index" : index} );
+                                    arguments: {"index": index});
                               },
                               child: TicketView(
                                 ticket: value,
@@ -125,9 +129,17 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: hotelList
-                        .take(2)
+                        .take(3)
                         .map(
-                          (value) => Hotels(hotel: value),
+                          (value) => GestureDetector(
+                            onTap: () {
+                              var index = hotelList.indexOf(value);
+                              Navigator.pushNamed(
+                                  context, AppRoutes.hotelDetailRoute,
+                                  arguments: {"index": index});
+                            },
+                            child: Hotels(hotel: value),
+                          ),
                         )
                         .toList(),
                   ),
