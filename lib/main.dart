@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:ticket_app/utils/routes/app_routes.dart';
 import 'package:ticket_app/utils/styles/app_styles.dart';
 import 'package:ticket_app/views/screens/home/all_hotels_screen.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Ticket App',
           theme: ThemeData(
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           ),
           //named Route....
           routes: {
-            AppRoutes.homeScreenRoute: (context) => const BottomNavBar(),
+            AppRoutes.homeScreenRoute: (context) =>  BottomNavBar(),
             AppRoutes.allTicketRoute: (context) => const AllTicketScreen(),
             AppRoutes.ticketScreenRoute: (context) => const TicketScreen(),
             AppRoutes.allHotelScreenRoute: (context) => const AllHotelsScreen(),

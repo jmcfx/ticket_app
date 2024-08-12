@@ -288,9 +288,12 @@ class ProfileScreen extends StatelessWidget {
                     height: 20.h,
                   ),
                   //Text.......
-                  CustomTextStyle(
-                    text: "How to get more miles",
-                    textStyle: AppStyles.headLineStyle3.copyWith(color: AppStyles.primaryColor),
+                  InkWell(
+                    onTap: (){},
+                    child: CustomTextStyle(
+                      text: "How to get more miles",
+                      textStyle: AppStyles.headLineStyle3.copyWith(color: AppStyles.primaryColor),
+                    ),
                   )
                 ],
               ),
